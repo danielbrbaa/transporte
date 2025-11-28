@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 210 11% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+
+    --primary: 207 81% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 210 11% 15%;
+
+    --muted: 210 17% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 207 81% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 207 81% 47%;
+
+    --radius: 0.5rem;
+
+    /* Status colors for delivery tracking */
+    --status-delivered: 142 71% 45%;
+    --status-reverted: 0 84% 60%;
+    --status-invalid: 25 95% 53%;
+    --status-contestation: 207 81% 47%;
+    --status-nok: 271 81% 56%;
+
+    /* Sidebar */
+    --sidebar-background: 210 11% 15%;
+    --sidebar-foreground: 210 17% 95%;
+    --sidebar-primary: 207 81% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 11% 20%;
+    --sidebar-accent-foreground: 210 17% 95%;
+    --sidebar-border: 210 11% 20%;
+    --sidebar-ring: 207 81% 47%;
+
+    /* Chart colors */
+    --chart-1: 207 81% 47%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 25 95% 53%;
+    --chart-4: 271 81% 56%;
+    --chart-5: 340 82% 52%;
+  }
+
+  .dark {
+    --background: 210 11% 15%;
+    --foreground: 210 17% 95%;
+
+    --card: 210 11% 18%;
+    --card-foreground: 210 17% 95%;
+
+    --popover: 210 11% 18%;
+    --popover-foreground: 210 17% 95%;
+
+    --primary: 207 81% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 11% 20%;
+    --secondary-foreground: 210 17% 95%;
+
+    --muted: 210 11% 20%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 207 81% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 11% 20%;
+    --input: 210 11% 20%;
+    --ring: 207 81% 47%;
+
+    --status-delivered: 142 71% 45%;
+    --status-reverted: 0 84% 60%;
+    --status-invalid: 25 95% 53%;
+    --status-contestation: 207 81% 47%;
+    --status-nok: 271 81% 56%;
+
+    --sidebar-background: 210 11% 12%;
+    --sidebar-foreground: 210 17% 95%;
+    --sidebar-primary: 207 81% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 11% 18%;
+    --sidebar-accent-foreground: 210 17% 95%;
+    --sidebar-border: 210 11% 18%;
+    --sidebar-ring: 207 81% 47%;
+
+    --chart-1: 207 81% 47%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 25 95% 53%;
+    --chart-4: 271 81% 56%;
+    --chart-5: 340 82% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
