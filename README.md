@@ -2,61 +2,86 @@
 ---
 
 ```md
-# 🚚 WLS Cargo – Sistema de Gerenciamento de Rotas e Entregas
+# 🚚 WLS Cargo – Sistema de Gerenciamento de Rotas, Motoristas e Entregas
 
-![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-MVP-blue)
-![React](https://img.shields.io/badge/React-18-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![License](https://img.shields.io/badge/license-Acadêmico-green)
+![React](https://img.shields.io/badge/React-18.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 ![Vite](https://img.shields.io/badge/Vite-5-purple)
+![Tailwind](https://img.shields.io/badge/TailwindCSS-3.4-38BDF8)
 
-Aplicação web funcional desenvolvida para gerenciamento de **rotas**, **motoristas** e **entregas**, incluindo controle de status, dashboards, histórico e documentação integrada.
-
-Este sistema foi criado como parte do **Projeto de Intervenção – UNINASSAU – 2025**, baseado no relatório acadêmico *“Aplicação Web para Gerenciamento de Rotas e Entregas”*.
+O **WLS Cargo** é um sistema web completo desenvolvido para gerenciamento de **motoristas**, **rotas** e **entregas**, incluindo controle de status, dashboards e histórico operacional.  
+Este projeto foi criado no contexto do **Projeto de Intervenção – UNINASSAU (2025)**, seguindo todos os requisitos funcionais descritos no relatório acadêmico oficial.
 
 ---
 
-## 📌 Funcionalidades Principais
+## 📑 Sumário
+1. [Visão Geral](#-visão-geral)  
+2. [Funcionalidades](#-funcionalidades)  
+3. [Tecnologias Utilizadas](#-tecnologias-utilizadas)  
+4. [Arquitetura do Projeto](#-arquitetura-do-projeto)  
+5. [Como Executar o Projeto](#-como-executar-o-projeto)  
+6. [Estrutura Técnica](#-estrutura-técnica)  
+7. [Relação com o Projeto Acadêmico](#-relação-com-o-projeto-acadêmico)  
+8. [Autores](#-autores)  
 
-### ✔ Dashboard Gerencial
+---
+
+# 📌 Visão Geral
+
+O sistema tem como objetivo substituir processos manuais baseados em planilhas por uma **solução digital prática**, acessível e eficiente.  
+Além disso, promove a **inclusão digital** e o desenvolvimento técnico dos estudantes envolvidos no projeto.
+
+O usuário pode:
+- Registrar motoristas  
+- Criar rotas e associá-las a motoristas  
+- Registrar entregas  
+- Atualizar status de entrega  
+- Consultar dashboards de desempenho  
+- Visualizar histórico completo das operações  
+
+---
+
+# 🚀 Funcionalidades
+
+### 🧑‍✈️ Gerenciamento de Motoristas
+- Criar, editar e excluir motoristas  
+- Campos: `nome`, `cpf`, `telefone`, `status`  
+- Interface em cards  
+
+### 🛣️ Gerenciamento de Rotas
+- Criar rotas completas  
+- Associar motorista  
+- Origem, destino, valor, cliente, data e observações  
+- Edição e exclusão  
+
+### 📦 Gerenciamento de Entregas
+- Criação de entregas vinculadas a rotas  
+- Atualização de status conforme relatório:
+  - **Revertido**  
+  - **Evidência Inválida**  
+  - **Contestação Enviada**  
+  - **NOK**  
+  - **Entregue**  
+- Histórico automático de atualizações  
+
+### 📊 Dashboard Gerencial
 - Total de motoristas, rotas e entregas  
 - Gráfico de entregas por status  
-- Últimas atualizações registradas  
+- Lista das últimas entregas atualizadas  
 
-### ✔ Gerenciamento de Motoristas
-- Cadastro, edição e exclusão  
-- CPF, telefone, status  
-- Listagem em cards  
-
-### ✔ Gerenciamento de Rotas
-- Origem, destino, cliente, valor e motorista  
-- Edição e exclusão  
-- Associação de motorista à rota  
-
-### ✔ Gerenciamento de Entregas
-- Criação de entrega  
-- Atualização de status  
-- Registro automático de histórico  
-- Status implementados conforme relatório:
-  - **Revertido**
-  - **Evidência Inválida**
-  - **Contestação Enviada**
-  - **NOK**
-  - **Entregue**
-
-### ✔ Documentação Interna
-Página `/documentacao` contendo:
-- Objetivo geral  
-- Objetivos específicos  
-- Tecnologias  
+### 📘 Documentação Interna Integrada
+- Objetivos  
 - Metodologia  
 - Resultados esperados  
+- Tecnologias usadas  
 
 ---
 
-## 🧱 Tecnologias Utilizadas
+# 🧱 Tecnologias Utilizadas
 
-### Frontend
+### **Frontend**
 - React 18  
 - TypeScript  
 - Vite  
@@ -65,58 +90,58 @@ Página `/documentacao` contendo:
 - React Router  
 - Recharts  
 
-### Backend (simulado)
-- LocalStorage  
-- Mock API (`services/mockApi.ts`)  
+### **Backend (simulado)**
+- API mockada utilizando `localStorage`
+- Serviços separados por domínio (`driversApi`, `routesApi`, `deliveriesApi`)
 
 ---
 
-## 📁 Arquitetura do Projeto
+# 🏗 Arquitetura do Projeto
 
 ```
 
 src/
-├── assets/              # imagens
-├── components/          # componentes reutilizáveis
-├── features/            # módulos organizados por domínio
-├── layouts/             # estrutura visual (sidebar/header)
-├── pages/               # rotas principais
-├── router/              # configuração do React Router
-├── services/            # mock API e CRUD localStorage
-├── store/               # (opcional) estado global
-└── utils/               # funções auxiliares
+├── assets/           # imagens, logos, ícones
+├── components/       # componentes reutilizáveis (UI)
+├── features/         # lógica separada por domínio
+├── layouts/          # estrutura visual (sidebar/header)
+├── pages/            # rotas da aplicação
+├── router/           # configuração do React Router
+├── services/         # mock API e persistência localStorage
+├── store/            # (opcional) estado centralizado
+└── utils/            # funções auxiliares
 
 ````
 
 ---
 
-## 🛠️ Instalação e Execução
+# ▶ Como Executar o Projeto
 
-### 🔧 Pré-requisitos
+### 🔧 **Pré-requisitos**
 - Node.js 18+  
 - npm  
 
 ---
 
-### ▶️ Instalar dependências
+## 📥 1. Instalar dependências
 ```bash
 npm install
 ````
 
 ---
 
-### ▶️ Rodar o ambiente de desenvolvimento
+## 🚀 2. Rodar em modo desenvolvimento
 
 ```bash
 npm run dev
 ```
 
-O sistema abrirá em:
+A aplicação estará disponível em:
 👉 **[http://localhost:8080](http://localhost:8080)**
 
 ---
 
-### ▶️ Build para produção
+## 🏗 3. Gerar build de produção
 
 ```bash
 npm run build
@@ -125,42 +150,45 @@ npm run preview
 
 ---
 
-## 📸 Screenshots (adicione depois)
+# 🔍 Estrutura Técnica
 
-Coloque prints aqui quando quiser:
+### Serviço de API Mockada
 
-```
-/screenshots/
-  dashboard.png
-  motoristas.png
-  rotas.png
-  entregas.png
-```
+O arquivo `services/mockApi.ts` simula um backend real:
 
-Exemplo no README:
+* CRUD completo para:
 
-```md
-![Dashboard](screenshots/dashboard.png)
-```
+  * motoristas
+  * rotas
+  * entregas
+* Controle de histórico de status
+* Persistência via `localStorage`
+
+### Interface Moderna
+
+* Componentes do **shadcn/ui**
+* Dashboard interativo com **Recharts**
+* Layout responsivo baseado em TailwindCSS
 
 ---
 
-## 🎓 Relação com o Projeto Acadêmico
+# 🎓 Relação com o Projeto Acadêmico
 
-Este sistema atende aos objetivos do Projeto de Intervenção da UNINASSAU, incluindo:
+Este software foi desenvolvido para atender aos objetivos descritos no relatório **Aplicação Web para Gerenciamento de Rotas e Entregas – 2025**, incluindo:
 
-* Desenvolvimento de uma aplicação web responsiva
-* Gerenciamento de rotas, motoristas e entregas
+* Desenvolvimento de sistema web responsivo
+* Gerenciamento completo de rotas, motoristas e entregas
 * Controle de status em tempo real
-* Dashboards para acompanhamento logístico
-* Documentação técnica integrada
-* Inclusão digital e prática profissional dos discentes
+* Centralização de informações
+* Construção de dashboards para tomada de decisão
+* Documentação integrada
+* Trabalho prático que simula ciclo de vida real de software
 
-Conteúdo baseado no relatório original **“Aplicação Web para Gerenciamento de Rotas e Entregas – 2025”**.
+O projeto está alinhado com a proposta de **inclusão digital**, modernizando processos internos da transportadora parceira.
 
 ---
 
-## 👨‍💻 Autores
+# 👥 Autores
 
 * Daniel Aragão – 01555320
 * Gabriel Bandeira – 01531782
@@ -171,17 +199,7 @@ Conteúdo baseado no relatório original **“Aplicação Web para Gerenciamento
 
 ---
 
-## 📄 Licença
+# 📄 Licença
 
-Este projeto é de caráter acadêmico, utilizado para fins de estudo e demonstração.
+Projeto de caráter **acadêmico**, não destinado a uso comercial.
 
----
-
-## ⭐ Contribuições
-
-Contribuições são bem-vindas!
-Para melhorias, abra uma issue ou envie um pull request.
-
-```
-
----
