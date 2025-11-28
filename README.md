@@ -1,7 +1,3 @@
-
----
-
-```md
 # 🚚 WLS Cargo – Sistema de Gerenciamento de Rotas, Motoristas e Entregas
 
 ![Status](https://img.shields.io/badge/status-MVP-blue)
