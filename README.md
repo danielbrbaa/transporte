@@ -1,73 +1,187 @@
-# Welcome to your Lovable project
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/f4968652-27c4-4bdc-9a2e-e9ea861ab17f
+```md
+# 🚚 WLS Cargo – Sistema de Gerenciamento de Rotas e Entregas
 
-## How can I edit this code?
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-MVP-blue)
+![React](https://img.shields.io/badge/React-18-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Vite](https://img.shields.io/badge/Vite-5-purple)
 
-There are several ways of editing your application.
+Aplicação web funcional desenvolvida para gerenciamento de **rotas**, **motoristas** e **entregas**, incluindo controle de status, dashboards, histórico e documentação integrada.
 
-**Use Lovable**
+Este sistema foi criado como parte do **Projeto de Intervenção – UNINASSAU – 2025**, baseado no relatório acadêmico *“Aplicação Web para Gerenciamento de Rotas e Entregas”*.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f4968652-27c4-4bdc-9a2e-e9ea861ab17f) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📌 Funcionalidades Principais
 
-**Use your preferred IDE**
+### ✔ Dashboard Gerencial
+- Total de motoristas, rotas e entregas  
+- Gráfico de entregas por status  
+- Últimas atualizações registradas  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### ✔ Gerenciamento de Motoristas
+- Cadastro, edição e exclusão  
+- CPF, telefone, status  
+- Listagem em cards  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### ✔ Gerenciamento de Rotas
+- Origem, destino, cliente, valor e motorista  
+- Edição e exclusão  
+- Associação de motorista à rota  
 
-Follow these steps:
+### ✔ Gerenciamento de Entregas
+- Criação de entrega  
+- Atualização de status  
+- Registro automático de histórico  
+- Status implementados conforme relatório:
+  - **Revertido**
+  - **Evidência Inválida**
+  - **Contestação Enviada**
+  - **NOK**
+  - **Entregue**
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### ✔ Documentação Interna
+Página `/documentacao` contendo:
+- Objetivo geral  
+- Objetivos específicos  
+- Tecnologias  
+- Metodologia  
+- Resultados esperados  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🧱 Tecnologias Utilizadas
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Frontend
+- React 18  
+- TypeScript  
+- Vite  
+- TailwindCSS  
+- shadcn/ui  
+- React Router  
+- Recharts  
+
+### Backend (simulado)
+- LocalStorage  
+- Mock API (`services/mockApi.ts`)  
+
+---
+
+## 📁 Arquitetura do Projeto
+
+```
+
+src/
+├── assets/              # imagens
+├── components/          # componentes reutilizáveis
+├── features/            # módulos organizados por domínio
+├── layouts/             # estrutura visual (sidebar/header)
+├── pages/               # rotas principais
+├── router/              # configuração do React Router
+├── services/            # mock API e CRUD localStorage
+├── store/               # (opcional) estado global
+└── utils/               # funções auxiliares
+
+````
+
+---
+
+## 🛠️ Instalação e Execução
+
+### 🔧 Pré-requisitos
+- Node.js 18+  
+- npm  
+
+---
+
+### ▶️ Instalar dependências
+```bash
+npm install
+````
+
+---
+
+### ▶️ Rodar o ambiente de desenvolvimento
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O sistema abrirá em:
+👉 **[http://localhost:8080](http://localhost:8080)**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+### ▶️ Build para produção
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run build
+npm run preview
+```
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 📸 Screenshots (adicione depois)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Coloque prints aqui quando quiser:
 
-## How can I deploy this project?
+```
+/screenshots/
+  dashboard.png
+  motoristas.png
+  rotas.png
+  entregas.png
+```
 
-Simply open [Lovable](https://lovable.dev/projects/f4968652-27c4-4bdc-9a2e-e9ea861ab17f) and click on Share -> Publish.
+Exemplo no README:
 
-## Can I connect a custom domain to my Lovable project?
+```md
+![Dashboard](screenshots/dashboard.png)
+```
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎓 Relação com o Projeto Acadêmico
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Este sistema atende aos objetivos do Projeto de Intervenção da UNINASSAU, incluindo:
+
+* Desenvolvimento de uma aplicação web responsiva
+* Gerenciamento de rotas, motoristas e entregas
+* Controle de status em tempo real
+* Dashboards para acompanhamento logístico
+* Documentação técnica integrada
+* Inclusão digital e prática profissional dos discentes
+
+Conteúdo baseado no relatório original **“Aplicação Web para Gerenciamento de Rotas e Entregas – 2025”**.
+
+---
+
+## 👨‍💻 Autores
+
+* Daniel Aragão – 01555320
+* Gabriel Bandeira – 01531782
+* Gabryel Santana – 01529087
+* Lucca Lima – 01534204
+* Osvaldo Queiroz – 01523854
+* Luiz Cristiano Apolinário da Silva Filho – 01536154
+
+---
+
+## 📄 Licença
+
+Este projeto é de caráter acadêmico, utilizado para fins de estudo e demonstração.
+
+---
+
+## ⭐ Contribuições
+
+Contribuições são bem-vindas!
+Para melhorias, abra uma issue ou envie um pull request.
+
+```
+
+---
