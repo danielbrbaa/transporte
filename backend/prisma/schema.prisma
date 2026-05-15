@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Driver {
+  id        String   @id @default(uuid())
+  name      String
+  cpf       String   @unique
+  phone     String
+  status    String   @default("active")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  routes     Route[]
+  deliveries Delivery[]
+}
+
+model Route {
+  id          String   @id @default(uuid())
+  origin      String
+  destination String
+  clientName  String
+  date        DateTime
+  value       Float    @default(0)
+  observations String  @default("")
+  status      String   @default("active")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  driverId String
+  driver   Driver @relation(fields: [driverId], references: [id], onDelete: Cascade)
+
+  deliveries Delivery[]
+}
+
+model Delivery {
+  id         String   @id @default(uuid())
+  status     String
+  clientName String
+  address    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  routeId  String
+  route    Route  @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  driverId String
+  driver   Driver @relation(fields: [driverId], references: [id], onDelete: Cascade)
+
+  history DeliveryHistory[]
+}
+
+model DeliveryHistory {
+  id         String   @id @default(uuid())
+  status     String
+  notes      String?
+  timestamp  DateTime @default(now())
+
+  deliveryId String
+  delivery   Delivery @relation(fields: [deliveryId], references: [id], onDelete: Cascade)
+}
