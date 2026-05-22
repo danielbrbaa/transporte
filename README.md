@@ -182,16 +182,6 @@ Este software foi desenvolvido para atender aos objetivos descritos no relatóri
 
 O projeto está alinhado com a proposta de **inclusão digital**, modernizando processos internos da transportadora parceira.
 
----
-
-# 👥 Autores
-
-* Daniel Aragão – 01555320
-* Gabriel Bandeira – 01531782
-* Gabryel Santana – 01529087
-* Lucca Lima – 01534204
-* Osvaldo Queiroz – 01523854
-* Luiz Cristiano Apolinário da Silva Filho – 01536154
 
 ---
 
